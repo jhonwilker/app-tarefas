@@ -1,0 +1,3 @@
+/*
+  um quadro de avisos
+*/
