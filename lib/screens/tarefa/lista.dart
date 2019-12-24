@@ -58,7 +58,12 @@ class ItemTarefa extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
               title: Text(_tarefa.tarefa.toString()),
-              trailing: Icon(Icons.delete),
-            );
+              trailing:  IconButton(
+                icon: Icon(Icons.delete),
+                onPressed: (){
+                  //codigo aqui para remover uma tarefa
+                },
+              ),
+    ); 
   }
 }
