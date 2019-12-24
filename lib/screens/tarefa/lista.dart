@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestortarefas/models/tarefa.dart';
-import 'package:gestortarefas/screens/tarefas/formulario.dart';
+import 'package:gestortarefas/screens/tarefa/formulario.dart';
 
 const _tituloAppBar = 'Minhas Tarefas';
 

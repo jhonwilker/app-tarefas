@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gestortarefas/screens/tarefas/lista.dart';
+import 'package:gestortarefas/screens/tarefa/lista.dart';
 
 void main() => runApp(MinhasTarefasApp());
 //jhonwilker
