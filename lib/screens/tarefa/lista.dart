@@ -4,6 +4,8 @@ import 'package:gestortarefas/screens/tarefa/formulario.dart';
 
 const _tituloAppBar = 'Minhas Tarefas';
 
+List<Tarefa> _tarefas = List();
+
 class ListaTarefas extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -13,8 +15,6 @@ class ListaTarefas extends StatefulWidget {
 }
 
 class ListaTarefasState extends State<ListaTarefas> {
-  final List<Tarefa> _tarefas = List();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,9 @@ class ListaTarefasState extends State<ListaTarefas> {
       ),
       body: ListView.separated(
         itemCount: _tarefas.length,
-        separatorBuilder: (context, indice)=>Divider( color: Colors.black,),
+        separatorBuilder: (context, indice) => Divider(
+          color: Colors.black,
+        ),
         itemBuilder: (context, indice) {
           final tarefa = _tarefas[indice];
           return ItemTarefa(tarefa);
@@ -57,13 +59,17 @@ class ItemTarefa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-              title: Text(_tarefa.tarefa.toString()),
-              trailing:  IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: (){
-                  //codigo aqui para remover uma tarefa
-                },
-              ),
-    ); 
+      title: Text(_tarefa.tarefa.toString()),
+      trailing: IconButton(
+        icon: Icon(Icons.delete),
+        onPressed: () {
+          _tarefas.remove(_tarefa);
+          print(_tarefas.length);
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => ListaTarefas()
+          ));
+        },
+      ),
+    );
   }
 }
